@@ -1,0 +1,17 @@
+{
+  "name": "pggweb-final-4charts-portfolio",
+  "version": "1.0.0",
+  "description": "Dark-themed React single-page with 4 charts (2x2), 20 circles, email button, and portfolio blocks with images.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-chartjs-2": "^5.2.0",
+    "chart.js": "^4.3.0"
+  }
+}

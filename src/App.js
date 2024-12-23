@@ -55,7 +55,7 @@ const lineSeoTraffic = {
   ],
 };
 
-// 3) Line (2 linii) - Clienți Local vs. Internațional
+// 3) Line (2 linii) - Clienți Local vs Internațional
 const lineClients = {
   labels: ["Iul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   datasets: [
@@ -88,7 +88,7 @@ const barAdsCampaigns = {
   ],
 };
 
-/* Opțiuni grafice comune */
+/* Opțiuni comune chart */
 const chartOptions = {
   responsive: true,
   plugins: {
@@ -102,17 +102,11 @@ const chartOptions = {
   },
   scales: {
     x: {
-      ticks: {
-        color: "#fff",
-        font: { size: 13 },
-      },
+      ticks: { color: "#fff", font: { size: 13 } },
       grid: { color: "#555" },
     },
     y: {
-      ticks: {
-        color: "#fff",
-        font: { size: 13 },
-      },
+      ticks: { color: "#fff", font: { size: 13 } },
       grid: { color: "#555" },
     },
   },
@@ -128,9 +122,9 @@ const portfolioData = [
       "creare-site-pro.ro",
       "online-development.com",
       "blog.pggweb.ro",
-      "shop.pggweb.ro (în lucru, exemplu de magazin online pentru clienți)",
-      "hoteluri-si-restaurante.ro (optimizare SEO pentru călătorii și restaurante)",
-      "ghidul-tech.ro (optimizare SEO pentru tehnologie/gadgeturi)",
+      "shop.pggweb.ro (în lucru, exemplu de magazin online)",
+      "hoteluri-si-restaurante.ro (SEO: călătorii/restaurante)",
+      "ghidul-tech.ro (SEO: tehnologie/gadgeturi)",
     ],
   },
   {
@@ -144,19 +138,19 @@ const portfolioData = [
   {
     category: "Optimizare SEO tehnică și campanii punctuale",
     items: [
-      "curatampeloc.ro (SEO one-time + 400 cold emails)",
-      "wings-education.ro (SEO o singură dată)",
+      "curatampeloc.ro (SEO + 400 cold emails)",
+      "wings-education.ro (SEO one-time)",
       "romaniagarden.ro (SEO + cold emails)",
       "welcomehub.ro (optimizare SEO punctual)",
       "legalup.ro (plan strategic SEO - subcontractori)",
-      "rotresort.ro (optimizare SEO activă - subcontractori)",
-      "happybeauty.ro (optimizare SEO inițială - subcontractori)",
+      "rotresort.ro (SEO activă - subcontractori)",
+      "happybeauty.ro (SEO inițială - subcontractori)",
     ],
   },
   {
     category: "Optimizare SEO + Social Media și conținut",
     items: [
-      "focus-studio.ro (redesign, SEO, campanii Social Media)",
+      "focus-studio.ro (redesign, SEO, Social Media)",
       "alesano.ro (SEO, articole, newsletter - subcontractori)",
       "profesori-meditatii.ro (site + SEO + reclame social media)",
       "eucom.ro (social media marketing, SEO punctual)",
@@ -166,7 +160,7 @@ const portfolioData = [
     category: "Proiecte SEO internaționale",
     items: [
       "ecobuildingsdesign.co.uk (redesign + email marketing)",
-      "thegadlys.school (creare website + indexare bazică)",
+      "thegadlys.school (creare website + indexare)",
     ],
   },
   {
@@ -177,11 +171,12 @@ const portfolioData = [
       "marketplace4you.ro (SEO tehnic + monitorizare continuă)",
       "butasideromania.ro (SEO tehnic, GSC - subcontractori)",
       "mediadesignro.ro (SEO tehnic, GSC - subcontractori)",
+      "tripdeals.ro (SEO tehnic, GSC)",
+      "tripdeals.it (SEO tehnic, GSC)",
     ],
   },
 ];
 
-// 5 imagini (ciclic)
 const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_01.png",
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_02.png",
@@ -190,7 +185,7 @@ const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_07.png",
 ];
 
-/** BOX INFO DEASUPRA CHARTURILOR (3 carduri) */
+/* Info box (sus) - 3 carduri */
 const infoData = [
   {
     title: "Testăm, inovăm și adaptăm.",
@@ -215,28 +210,72 @@ const infoData = [
   },
 ];
 
-/* GENERĂM O SINGURĂ DATĂ POZIȚIILE PENTRU 80 CERCURI, top/left 0..95% */
+/* Poziții cercuri roșii */
 const circlePositions = Array(80)
   .fill(null)
   .map(() => {
-    const top = Math.floor(Math.random() * 96); // 0..95
-    const left = Math.floor(Math.random() * 96); // 0..95
-    const size = Math.floor(Math.random() * 21) + 10; // 10..30
+    const top = Math.floor(Math.random() * 96);
+    const left = Math.floor(Math.random() * 96);
+    const size = Math.floor(Math.random() * 21) + 10; // 10..30 px
     const delay = (Math.random() * 2).toFixed(1); // 0..2 sec
     return { top, left, size, delay };
   });
+
+/* Rezultate: 4 carduri + imagini
+   Înlocuim la "Rezultate SEO" prima imagine cu "image_2024-10-06_165035434.png"
+   + adăugăm noul card "Exemple Concrete" */
+const resultsData = [
+  {
+    title: "Rezultate Social Media",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-10-27_075909641.png",
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-08-14_172022789.png",
+      "https://pggweb.ro/wp-content/uploads/2024/12/Screenshot-2024-10-20-112908.png",
+    ],
+  },
+  {
+    title: "Rezultate SEO",
+    images: [
+      /* imaginea nouă în loc de image_2024-09-29_165625277.png: */
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-10-06_165035434.png",
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_150459005.png",
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_153702423.png",
+    ],
+  },
+  {
+    title: "Rezultate Newsletter",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-08-21_033457431.png",
+    ],
+  },
+  {
+    title: "Rezultate SEO, Google Ads, Social Media, Newsletter",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-03_113642921.png",
+    ],
+  },
+  {
+    /* Noul card "Exemple Concrete" */
+    title: "Exemple Concrete",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2024/12/Copie-a-fisierului-spring-sale-detergenti.jpg",
+      "https://pggweb.ro/wp-content/uploads/2024/12/curatare_auto.png",
+      "https://pggweb.ro/wp-content/uploads/2024/12/Copy-of-Copy-of-White-modern-did-you-know-instagram-post-Your-Story.jpg",
+    ],
+  },
+];
 
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [infoIndex, setInfoIndex] = useState(0);
 
-  // Loading (2s)
+  // ecran de încărcare 2s
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Schimbare card infoData la fiecare 8s
+  // schimbăm cardul info la fiecare 8s
   useEffect(() => {
     const interval = setInterval(() => {
       setInfoIndex((prev) => (prev + 1) % infoData.length);
@@ -253,7 +292,7 @@ export default function App() {
     );
   }
 
-  // Rendăm cerculețele roșii, stil inline
+  // Generăm cercurile roșii (80)
   const circles = circlePositions.map((pos, i) => (
     <div
       key={i}
@@ -283,7 +322,7 @@ export default function App() {
         <div className="header-right">Deeds Not Words</div>
       </header>
 
-      {/* BOX DEASUPRA CHARTURILOR, CU IMAGINE PE DREAPTA */}
+      {/* BOX SUS (info) */}
       <div className="info-box with-image">
         <div className="info-text">
           <h2>{infoData[infoIndex].title}</h2>
@@ -339,6 +378,21 @@ export default function App() {
           </div>
         </div>
       ))}
+
+      {/* Rezultate - 5 carduri cu imagini (inclusiv cardul nou “Exemple Concrete”) */}
+      <h2 className="results-section-title">Rezultate</h2>
+      <section className="results-section">
+        {resultsData.map((res, i) => (
+          <div className="results-block" key={i}>
+            <h3>{res.title}</h3>
+            <div className="results-images">
+              {res.images.map((imgUrl, j) => (
+                <img src={imgUrl} alt={`Rezultat ${i}-${j}`} key={j} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
 
       {/* FOOTER */}
       <footer className="footer">

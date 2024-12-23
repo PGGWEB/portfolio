@@ -14,9 +14,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Asigurăm că spațiul mort la bază e minim 
-   => body si html pe 100%, conținutul se ajustează */
 html,
 body {
   width: 100%;
@@ -28,7 +25,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* LOADING (2s) + “Bine ai venit!” (0.5s) */
+/* LOADING (2s) + “Bine ai venit!” */
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -80,14 +77,14 @@ body {
   }
 }
 
-/* CERCURI ROȘII (z-index:0) */
+/* CERCURI ROȘII */
 .floating-circle {
   position: absolute;
   border-radius: 50%;
   background: var(--accent-color);
   opacity: 0.5;
   animation: floatInSpace 6s ease-in-out infinite alternate;
-  pointer-events: none; /* sa nu fie click-abile */
+  pointer-events: none;
   z-index: 0;
 }
 @keyframes floatInSpace {
@@ -203,6 +200,8 @@ body {
   font-weight: 600;
   z-index: 10;
 }
+/* Desktop => text stânga + imagine dreapta. 
+   Mobil => media query mai jos. */
 .portfolio-block {
   display: flex;
   justify-content: space-between;
@@ -218,7 +217,7 @@ body {
   z-index: 10;
 }
 .portfolio-text {
-  flex: 1;
+  flex: 1; /* text la stânga => order normal (1) */
 }
 .portfolio-text h2 {
   font-size: 1.7rem;
@@ -243,7 +242,7 @@ body {
 }
 .portfolio-image {
   flex: 0 0 200px;
-  text-align: right;
+  text-align: right; /* imagine la dreapta */
 }
 .portfolio-image img {
   max-width: 200px;
@@ -252,6 +251,55 @@ body {
 }
 .portfolio-image img:hover {
   transform: scale(1.05);
+}
+
+/* REZULTATE (5 carduri) */
+.results-section-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  z-index: 10;
+}
+.results-section {
+  width: 95%;
+  max-width: 1200px;
+  margin: 1rem auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+}
+.results-block {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.8s ease forwards;
+  padding: 1.5rem;
+}
+.results-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+.results-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.results-images img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #333;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.results-images img:hover {
+  transform: scale(1.04);
 }
 
 /* FOOTER */
@@ -265,7 +313,7 @@ body {
   z-index: 10;
 }
 
-/* BUTON EMAIL (70x70, font 1.8rem) */
+/* BUTON EMAIL */
 .email-button {
   position: fixed;
   bottom: 30px;
@@ -289,7 +337,7 @@ body {
   background: #ff8f8f;
 }
 
-/* fadeInUp */
+/* ANIMARE fadeInUp */
 @keyframes fadeInUp {
   0% {
     transform: translateY(15px);
@@ -298,5 +346,45 @@ body {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* MEDIA QUERIES pentru mobil */
+@media (max-width: 768px) {
+  .info-box.with-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-image {
+    margin-top: 1rem;
+  }
+
+  .charts-section {
+    grid-template-columns: 1fr; /* 1 col pe mobil */
+  }
+
+  /* Portofoliu => text + imagine la final => 
+     invertim ordinea doar pe mobil */
+  .portfolio-block {
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio-text {
+    margin-bottom: 1rem;
+    text-align: center;
+    order: 1; /* text primul */
+  }
+  .portfolio-image {
+    margin-top: 1rem;
+    text-align: center;
+    order: 2; /* imagine al doilea => la final */
+  }
+  .portfolio-image img {
+    max-width: 100%;
+  }
+
+  /* Rezultate - imaginile tot 100% latime pe mobil */
+  .results-images img {
+    max-width: 100%;
   }
 }

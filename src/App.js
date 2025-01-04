@@ -128,7 +128,9 @@ const portfolioData = [
     ],
   },
   {
-    category: "Proiecte complexe cu SEO tehnic și optimizare continuă",
+    // Titlu modificat
+    category:
+      "Proiecte complexe cu SEO tehnic, Google Ads și optimizare continuă",
     items: [
       "stingatoarebucuresti.ro (creare site, SEO, Google Ads - 3 ani)",
       "verificare-stingatoarebucuresti.ro (creare site, SEO, Google Ads - 3 ani)",
@@ -157,7 +159,8 @@ const portfolioData = [
     ],
   },
   {
-    category: "Proiecte SEO internaționale",
+    // Titlu modificat
+    category: "Proiecte internaționale",
     items: [
       "ecobuildingsdesign.co.uk (redesign + email marketing)",
       "thegadlys.school (creare website + indexare)",
@@ -185,28 +188,22 @@ const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_07.png",
 ];
 
-/* Info box (sus) - 3 carduri */
+/* Info box (sus) - 3 carduri (fără imagine) */
 const infoData = [
   {
     title: "Testăm, inovăm și adaptăm.",
     subtitle:
       "Gestionăm conturi proprii pentru a experimenta și învăța continuu, rămânând mereu la curent cu update-urile platformelor sociale și tendințele din marketing digital.",
-    image:
-      "https://blog.pggweb.ro/wp-content/uploads/2024/06/im-image-section-62-v2.png",
   },
   {
     title: "Tehnologiile de azi pentru soluțiile de mâine.",
     subtitle:
       "Implementăm procese automatizate cu make.com și API-uri avansate precum ChatGPT, oferind clienților noștri eficiență și rezultate măsurabile.",
-    image:
-      "https://blog.pggweb.ro/wp-content/uploads/2024/06/im-image-section-63-v2.png",
   },
   {
     title: "Rămânem cu un pas înainte.",
     subtitle:
       "Suntem mereu conectați la cele mai recente știri și tehnologii, învățând continuu pentru a-ți oferi soluții inovatoare și actualizate.",
-    image:
-      "https://blog.pggweb.ro/wp-content/uploads/2024/06/im-image-section-61-v2.png",
   },
 ];
 
@@ -221,9 +218,10 @@ const circlePositions = Array(80)
     return { top, left, size, delay };
   });
 
-/* Rezultate: 4 carduri + imagini
-   Înlocuim la "Rezultate SEO" prima imagine cu "image_2024-10-06_165035434.png"
-   + adăugăm noul card "Exemple Concrete" */
+/* Rezultate: 6 carduri cu imagini
+   - Adăugăm noile imagini la „Rezultate SEO”
+   - Creăm un nou card “Rezultate Google Ads” imediat după SEO
+*/
 const resultsData = [
   {
     title: "Rezultate Social Media",
@@ -231,15 +229,31 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-10-27_075909641.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-08-14_172022789.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/Screenshot-2024-10-20-112908.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb-2.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb-1.png",
     ],
   },
   {
     title: "Rezultate SEO",
     images: [
-      /* imaginea nouă în loc de image_2024-09-29_165625277.png: */
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-10-06_165035434.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_150459005.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_153702423.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/WhatsApp-Image-2024-07-23-at-22.45.21_d22f2783.jpg",
+      // Noile imagini adăugate:
+      "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-02-04_123233063.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_210928985.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215003547.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/stb-ranking-report-pggweb.png",
+    ],
+  },
+  {
+    /* Noul card: Rezultate Google Ads */
+    title: "Rezultate Google Ads",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2025/01/google-ads-screen-1.5.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215504596.png",
     ],
   },
   {
@@ -255,7 +269,6 @@ const resultsData = [
     ],
   },
   {
-    /* Noul card "Exemple Concrete" */
     title: "Exemple Concrete",
     images: [
       "https://pggweb.ro/wp-content/uploads/2024/12/Copie-a-fisierului-spring-sale-detergenti.jpg",
@@ -268,6 +281,7 @@ const resultsData = [
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [infoIndex, setInfoIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   // ecran de încărcare 2s
   useEffect(() => {
@@ -282,6 +296,14 @@ export default function App() {
     }, 8000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleImageClick = (imgUrl) => {
+    setSelectedImage(imgUrl);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   if (loading) {
     return (
@@ -323,13 +345,10 @@ export default function App() {
       </header>
 
       {/* BOX SUS (info) */}
-      <div className="info-box with-image">
+      <div className="info-box">
         <div className="info-text">
           <h2>{infoData[infoIndex].title}</h2>
           <p>{infoData[infoIndex].subtitle}</p>
-        </div>
-        <div className="info-image">
-          <img src={infoData[infoIndex].image} alt="ilustratie info" />
         </div>
       </div>
 
@@ -374,12 +393,17 @@ export default function App() {
             </ul>
           </div>
           <div className="portfolio-image">
-            <img src={portfolioImages[idx % 5]} alt={`Ilustratie cat ${idx}`} />
+            <img
+              src={portfolioImages[idx % 5]}
+              alt={`Ilustratie cat ${idx}`}
+              style={{ cursor: "pointer" }}
+              onClick={() => handleImageClick(portfolioImages[idx % 5])}
+            />
           </div>
         </div>
       ))}
 
-      {/* Rezultate - 5 carduri cu imagini (inclusiv cardul nou “Exemple Concrete”) */}
+      {/* REZULTATE */}
       <h2 className="results-section-title">Rezultate</h2>
       <section className="results-section">
         {resultsData.map((res, i) => (
@@ -387,12 +411,51 @@ export default function App() {
             <h3>{res.title}</h3>
             <div className="results-images">
               {res.images.map((imgUrl, j) => (
-                <img src={imgUrl} alt={`Rezultat ${i}-${j}`} key={j} />
+                <img
+                  src={imgUrl}
+                  alt={`Rezultat ${i}-${j}`}
+                  key={j}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleImageClick(imgUrl)}
+                />
               ))}
             </div>
           </div>
         ))}
       </section>
+
+      {/* MODAL IMAGINE */}
+      {selectedImage && (
+        <div
+          className="modal-backdrop"
+          onClick={closeModal}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "zoom-out",
+            zIndex: 9999,
+          }}
+        >
+          <img
+            src={selectedImage}
+            alt="Zoom"
+            style={{
+              maxWidth: "90%",
+              maxHeight: "80%",
+              cursor: "auto",
+              border: "4px solid #fff",
+              borderRadius: "6px",
+            }}
+          />
+        </div>
+      )}
 
       {/* FOOTER */}
       <footer className="footer">

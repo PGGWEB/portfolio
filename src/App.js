@@ -218,9 +218,14 @@ const circlePositions = Array(80)
     return { top, left, size, delay };
   });
 
-/* Rezultate: 6 carduri cu imagini
-   - Adăugăm noile imagini la „Rezultate SEO”
-   - Creăm un nou card “Rezultate Google Ads” imediat după SEO
+/* Rezultate: 7 carduri cu imagini
+   - "Rezultate Social Media"
+   - "Rezultate SEO"
+   - "Rezultate Google Ads"
+   - "Rezultate Newsletter"
+   - "Rezultate SEO, Google Ads, Social Media, Newsletter"
+   - + noul card "Rezultate automatizare procese interne prin make.com"
+   - "Exemple Concrete"
 */
 const resultsData = [
   {
@@ -241,7 +246,6 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_150459005.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-07_153702423.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/WhatsApp-Image-2024-07-23-at-22.45.21_d22f2783.jpg",
-      // Noile imagini adăugate:
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-02-04_123233063.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_210928985.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215003547.png",
@@ -249,7 +253,6 @@ const resultsData = [
     ],
   },
   {
-    /* Noul card: Rezultate Google Ads */
     title: "Rezultate Google Ads",
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/01/google-ads-screen-1.5.jpg",
@@ -266,6 +269,17 @@ const resultsData = [
     title: "Rezultate SEO, Google Ads, Social Media, Newsletter",
     images: [
       "https://pggweb.ro/wp-content/uploads/2024/12/image_2024-06-03_113642921.png",
+    ],
+  },
+  {
+    /* Noul card cu make.com */
+    title: "Rezultate automatizare procese interne prin make.com",
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled234523534.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled4356345634.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled25432354234.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled674567546746.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled6785675.png",
     ],
   },
   {

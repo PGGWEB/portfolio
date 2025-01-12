@@ -217,14 +217,15 @@ const circlePositions = Array(80)
     return { top, left, size, delay };
   });
 
-/* Rezultate: 7 carduri cu imagini
+/* Rezultate: 8 carduri cu imagini
    - "Rezultate Social Media"
    - "Rezultate SEO"
    - "Rezultate Google Ads"
    - "Rezultate Newsletter"
    - "Rezultate SEO, Google Ads, Social Media, Newsletter"
    - "Rezultate automatizare procese interne prin make.com"
-   - "Exemple Concrete" (unde am adăugat noile imagini)
+   - "Exemple Concrete" (cu noile imagini)
+   - "Exemple Concrete" a fost extins cu 7 imagini noi
 */
 const resultsData = [
   {
@@ -256,6 +257,9 @@ const resultsData = [
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/01/google-ads-screen-1.5.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215504596.png",
+      // Noile imagini adăugate:
+      "https://pggweb.ro/wp-content/uploads/2025/01/1000044355.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/01/1000044354.jpg",
     ],
   },
   {
@@ -280,18 +284,23 @@ const resultsData = [
     ],
   },
   {
-    /* Am adăugat noile 4 imagini la sfârșit, pe lângă cele 3 existente */
     title: "Exemple Concrete",
     images: [
       "https://pggweb.ro/wp-content/uploads/2024/12/Copie-a-fisierului-spring-sale-detergenti.jpg",
       "https://pggweb.ro/wp-content/uploads/2024/12/curatare_auto.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/Copy-of-Copy-of-White-modern-did-you-know-instagram-post-Your-Story.jpg",
-
-      /* Noile imagini */
+      // Noile imagini adăugate:
       "https://pggweb.ro/wp-content/uploads/2025/01/personal_branding_delia_14.11.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Mental-Health-Quote-Instagram-Post-Mobile-Video.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/01/newsletter_24.122.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/personal_branding_silviu_24.12.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/4.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/5.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/6.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/7.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/1.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/2.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Green-Modern-Furniture-Product-Features-Working-Chair-Instagram-Post.png",
     ],
   },
 ];

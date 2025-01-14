@@ -219,13 +219,12 @@ const circlePositions = Array(80)
 
 /* Rezultate: 8 carduri cu imagini
    - "Rezultate Social Media"
-   - "Rezultate SEO"
+   - "Rezultate SEO" (unde am adăugat cele 2 imagini noi)
    - "Rezultate Google Ads"
    - "Rezultate Newsletter"
    - "Rezultate SEO, Google Ads, Social Media, Newsletter"
    - "Rezultate automatizare procese interne prin make.com"
-   - "Exemple Concrete" (cu noile imagini)
-   - "Exemple Concrete" a fost extins cu 7 imagini noi
+   - "Exemple Concrete"
 */
 const resultsData = [
   {
@@ -250,6 +249,9 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_210928985.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215003547.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/stb-ranking-report-pggweb.png",
+      // Cele 2 imagini noi:
+      "https://pggweb.ro/wp-content/uploads/2025/01/54654364563456345.png",
+      "https://pggweb.ro/wp-content/uploads/2025/01/Untitled435654365465436.png",
     ],
   },
   {
@@ -257,7 +259,6 @@ const resultsData = [
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/01/google-ads-screen-1.5.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/01/image_2024-01-29_215504596.png",
-      // Noile imagini adăugate:
       "https://pggweb.ro/wp-content/uploads/2025/01/1000044355.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/01/1000044354.jpg",
     ],
@@ -289,7 +290,6 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2024/12/Copie-a-fisierului-spring-sale-detergenti.jpg",
       "https://pggweb.ro/wp-content/uploads/2024/12/curatare_auto.png",
       "https://pggweb.ro/wp-content/uploads/2024/12/Copy-of-Copy-of-White-modern-did-you-know-instagram-post-Your-Story.jpg",
-      // Noile imagini adăugate:
       "https://pggweb.ro/wp-content/uploads/2025/01/personal_branding_delia_14.11.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Mental-Health-Quote-Instagram-Post-Mobile-Video.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/01/newsletter_24.122.png",

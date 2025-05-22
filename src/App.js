@@ -89,10 +89,7 @@ const barAdsCampaigns = {
 const chartOptions = {
   responsive: true,
   plugins: {
-    legend: {
-      position: "top",
-      labels: { color: "#fff", font: { size: 14 } },
-    },
+    legend: { position: "top", labels: { color: "#fff", font: { size: 14 } } },
   },
   scales: {
     x: { ticks: { color: "#fff" }, grid: { color: "#555" } },
@@ -119,7 +116,7 @@ const infoData = [
   },
 ];
 
-/* ───────── Portofoliu ───────── */
+/* ───────── Portofoliu & imagini ───────── */
 const portfolioData = [
   {
     category: "Site-uri proprii optimizate SEO",
@@ -138,46 +135,49 @@ const portfolioData = [
     category:
       "Proiecte complexe cu SEO tehnic, Google Ads și optimizare continuă",
     items: [
-      "stingatoarebucuresti.ro",
-      "verificare-stingatoarebucuresti.ro",
-      "casare-stingatoarebucuresti.ro",
+      "stingatoarebucuresti.ro (creare site, SEO, Google Ads - 3 ani)",
+      "verificare-stingatoarebucuresti.ro (creare site, SEO, Google Ads - 3 ani)",
+      "casare-stingatoarebucuresti.ro (creare site, SEO, Google Ads - 3 ani)",
     ],
   },
   {
     category: "Optimizare SEO tehnică și campanii punctuale",
     items: [
-      "curatampeloc.ro",
-      "wings-education.ro",
-      "romaniagarden.ro",
-      "welcomehub.ro",
-      "legalup.ro",
-      "rotresort.ro",
-      "happybeauty.ro",
+      "curatampeloc.ro (SEO + 400 cold emails)",
+      "wings-education.ro (SEO one-time)",
+      "romaniagarden.ro (SEO + cold emails)",
+      "welcomehub.ro (optimizare SEO punctual)",
+      "legalup.ro (plan strategic SEO - subcontractori)",
+      "rotresort.ro (SEO activă - subcontractori)",
+      "happybeauty.ro (SEO inițială - subcontractori)",
     ],
   },
   {
     category: "Optimizare SEO + Social Media și conținut",
     items: [
-      "focus-studio.ro",
-      "alesano.ro",
-      "profesori-meditatii.ro",
-      "eucom.ro",
+      "focus-studio.ro (redesign, SEO, Social Media)",
+      "alesano.ro (SEO, articole, newsletter - subcontractori)",
+      "profesori-meditatii.ro (site + SEO + reclame social media)",
+      "eucom.ro (social media marketing, SEO punctual)",
     ],
   },
   {
     category: "Proiecte internaționale",
-    items: ["ecobuildingsdesign.co.uk", "thegadlys.school"],
+    items: [
+      "ecobuildingsdesign.co.uk (redesign + email marketing)",
+      "thegadlys.school (creare website + indexare)",
+    ],
   },
   {
     category: "Alte proiecte SEO notabile",
     items: [
-      "cadesign.ro",
-      "startitude.ro",
-      "marketplace4you.ro",
-      "butasideromania.ro",
-      "mediadesignro.ro",
-      "tripdeals.ro",
-      "tripdeals.it",
+      "cadesign.ro (SEO complet - subcontractori)",
+      "startitude.ro (SEO activ - subcontractori)",
+      "marketplace4you.ro (SEO tehnic + monitorizare continuă)",
+      "butasideromania.ro (SEO tehnic, GSC - subcontractori)",
+      "mediadesignro.ro (SEO tehnic, GSC - subcontractori)",
+      "tripdeals.ro (SEO tehnic, GSC)",
+      "tripdeals.it (SEO tehnic, GSC)",
     ],
   },
 ];
@@ -190,7 +190,7 @@ const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_07.png",
 ];
 
-/* ───────── Rezultate (slidere) ───────── */
+/* ───────── Rezultate (imagini + clipuri) ───────── */
 const resultsData = [
   {
     title: "Rezultate Social Media",
@@ -201,6 +201,10 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb-2.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitledpggweb-1.png",
+      "https://pggweb.ro/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-11-at-18.32.02_eeccf82c.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-11-at-18.33.02_68325f47.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-11-at-18.42.41_db77b6a0.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/05/Top-formate-de-continut1.jpg",
     ],
   },
   {
@@ -280,6 +284,10 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/05/04.04-1.png",
       "https://pggweb.ro/wp-content/uploads/2025/05/04.04.png",
       "https://pggweb.ro/wp-content/uploads/2025/05/492353102_122195626304100392_2147387960046428571_n.jpg",
+      /* ─── clipuri video noi ─── */
+      "https://pggweb.ro/wp-content/uploads/2025/05/1.-Final-CUT-Promo-SEO-PGG.mp4",
+      "https://pggweb.ro/wp-content/uploads/2025/05/2.-Final-Promo-After-Feedback.mp4",
+      "https://pggweb.ro/wp-content/uploads/2025/05/3.-Postare-Educativa-SEO-.mp4",
     ],
   },
 ];
@@ -288,16 +296,18 @@ const resultsData = [
 const caseStudies = [
   {
     title: "Studiu de caz 1",
-    text: `A fost scris un singur articol, fără să se investească în reclame. În 3 săptămâni a generat 979 de click-uri și 8 740 de impresii din Google Discover, pe un site cu 4 000–5 000 de vizite lunare.
+    text: `Cum un singur articol a adus 979 de vizite din Google Discover în doar 3 săptămâni
 
-Subiectul: temă sezonieră, cu potențial comercial.  
+A fost scris un singur articol, fără să se investească în reclame. În 3 săptămâni a generat 979 de click-uri și 8 740 de impresii din Google Discover, pe un site cu 4 000–5 000 de vizite lunare.
+
+Subiectul: temă sezonieră, cu potențial comercial.
 Structură orientată pe Discover:
 - titlu scurt și clar
 - imagine mare și contrastantă
-- FAQ & bullet-uri pentru scanare rapidă
+- FAQ și bullet-uri – ușor de scanat
 - CTA discret, optimizat pentru mobil
 
-Indexare rapidă, update vizual la 48 h. CTR: 11,2 %
+Indexare rapidă, update vizual la 48 h · CTR: 11,2 %
 
 Rezultate:
 - 979 clicuri din Discover
@@ -311,7 +321,9 @@ Concluzie: conținutul ales strategic și optimizat pentru Search + Discover poa
   },
   {
     title: "Studiu de caz 2",
-    text: `Nișă: servicii psihologice  
+    text: `Cum am generat 37 de clienți potențiali pentru un cabinet psihologic cu mai puțin de 400 lei
+
+Nișă: servicii psihologice
 Obiectiv: lead-uri calificate pentru programări
 
 Ce am făcut:
@@ -324,7 +336,7 @@ Rezultate în 7 zile:
 - 37 lead-uri
 - Cost/lead: 10,76 lei
 - Buget total: 397,96 lei
-- Impact: 12 800 persoane, 30 553 afișări
+- Impact: 12 800 persoane · 30 553 afișări
 - Venit generat: ≈7 000 lei
 
 Factor-cheie: claritatea mesajului, emoția transmisă și imaginea autentică.`,
@@ -335,7 +347,7 @@ Factor-cheie: claritatea mesajului, emoția transmisă și imaginea autentică.`
   },
 ];
 
-/* ───────── Cercuri ───────── */
+/* ───────── Cercuri roșii ───────── */
 const circles = Array(80)
   .fill(null)
   .map((_, id) => ({
@@ -346,12 +358,13 @@ const circles = Array(80)
     delay: (Math.random() * 2).toFixed(1),
   }));
 
-/* ───────── App ───────── */
+/* ───────── APP ───────── */
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [infoIdx, setInfoIdx] = useState(0);
   const [zoom, setZoom] = useState(null);
   const [slideIdx, setSlideIdx] = useState(resultsData.map(() => 0));
+  const [caseIdx, setCaseIdx] = useState(0);
 
   /* loader */
   useEffect(() => {
@@ -359,7 +372,7 @@ export default function App() {
     return () => clearTimeout(t);
   }, []);
 
-  /* text rotativ */
+  /* info rotativ */
   useEffect(() => {
     const i = setInterval(
       () => setInfoIdx((p) => (p + 1) % infoData.length),
@@ -368,20 +381,25 @@ export default function App() {
     return () => clearInterval(i);
   }, []);
 
-  /* slider helpers */
+  /* slider helpers (rezultate) */
   const stepSlide = (sec, d) =>
-    setSlideIdx((p) => {
-      const c = [...p];
+    setSlideIdx((prev) => {
+      const arr = [...prev];
       const len = resultsData[sec].images.length;
-      c[sec] = (c[sec] + d + len) % len;
-      return c;
+      arr[sec] = (arr[sec] + d + len) % len;
+      return arr;
     });
+
   const pickSlide = (sec, idx) =>
-    setSlideIdx((p) => {
-      const c = [...p];
-      c[sec] = idx;
-      return c;
+    setSlideIdx((prev) => {
+      const arr = [...prev];
+      arr[sec] = idx;
+      return arr;
     });
+
+  /* case study nav */
+  const stepCase = (d) =>
+    setCaseIdx((p) => (p + d + caseStudies.length) % caseStudies.length);
 
   if (loading)
     return (
@@ -393,7 +411,7 @@ export default function App() {
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
-      {/* cercuri decor */}
+      {/* cercuri */}
       {circles.map((c) => (
         <div
           key={c.id}
@@ -411,7 +429,7 @@ export default function App() {
       {/* HEADER */}
       <header className="header">
         <div className="header-left">
-          <img src={LOGO} alt="logo" />
+          <img src={LOGO} alt="PGG WEB Logo" />
         </div>
         <div className="header-center">
           <h1>PGG WEB S.R.L.</h1>
@@ -445,22 +463,22 @@ export default function App() {
 
       {/* PORTOFOLIU */}
       <h2 className="portfolio-title">Proiectele noastre</h2>
-      {portfolioData.map((cat, i) => (
-        <div className="portfolio-block" key={i}>
+      {portfolioData.map((cat, idx) => (
+        <div className="portfolio-block" key={idx}>
           <div className="portfolio-text">
             <h2>{cat.category}</h2>
             <ul>
-              {cat.items.map((it, j) => (
-                <li key={j}>{it}</li>
+              {cat.items.map((item, i) => (
+                <li key={i}>{item}</li>
               ))}
             </ul>
           </div>
           <div className="portfolio-image">
             <img
-              src={portfolioImages[i % portfolioImages.length]}
+              src={portfolioImages[idx % portfolioImages.length]}
               alt=""
               onClick={() =>
-                setZoom(portfolioImages[i % portfolioImages.length])
+                setZoom(portfolioImages[idx % portfolioImages.length])
               }
             />
           </div>
@@ -477,48 +495,82 @@ export default function App() {
               <button className="nav-btn" onClick={() => stepSlide(s, -1)}>
                 ‹
               </button>
-              <img
-                className="big-img"
-                src={sec.images[slideIdx[s]]}
-                alt=""
-                onClick={() => setZoom(sec.images[slideIdx[s]])}
-              />
+              {sec.images[slideIdx[s]].endsWith(".mp4") ? (
+                <video
+                  className="big-media"
+                  src={sec.images[slideIdx[s]]}
+                  controls
+                />
+              ) : (
+                <img
+                  className="big-media"
+                  src={sec.images[slideIdx[s]]}
+                  alt=""
+                  onClick={() => setZoom(sec.images[slideIdx[s]])}
+                />
+              )}
               <button className="nav-btn" onClick={() => stepSlide(s, 1)}>
                 ›
               </button>
             </div>
             <div className="thumb-row">
-              {sec.images.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt=""
-                  className={`thumb ${i === slideIdx[s] ? "active" : ""}`}
-                  onClick={() => pickSlide(s, i)}
-                />
-              ))}
+              {sec.images.map((media, i) => {
+                const isVid = media.endsWith(".mp4");
+                return isVid ? (
+                  <video
+                    key={i}
+                    src={media}
+                    muted
+                    className={`thumb ${i === slideIdx[s] ? "active" : ""}`}
+                    onClick={() => pickSlide(s, i)}
+                  />
+                ) : (
+                  <img
+                    key={i}
+                    src={media}
+                    alt=""
+                    className={`thumb ${i === slideIdx[s] ? "active" : ""}`}
+                    onClick={() => pickSlide(s, i)}
+                  />
+                );
+              })}
             </div>
           </div>
         ))}
       </section>
 
-      {/* STUDII DE CAZ */}
+      {/* STUDII DE CAZ – slider cu butoane */}
       <h2 className="case-section-title">Studii de caz</h2>
-      <section className="case-section">
-        {caseStudies.map((cs, i) => (
-          <div className="case-block" key={i}>
-            <div className="case-text">
-              <h3>{cs.title}</h3>
-              <p style={{ whiteSpace: "pre-line" }}>{cs.text}</p>
-            </div>
-            <div className="case-images">
-              {cs.images.map((img, j) => (
-                <img key={j} src={img} alt="" onClick={() => setZoom(img)} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+      <div className="case-block">
+        <div className="case-text">
+          <h3>{caseStudies[caseIdx].title}</h3>
+          <p style={{ whiteSpace: "pre-line" }}>{caseStudies[caseIdx].text}</p>
+        </div>
+        <div className="case-images">
+          {caseStudies[caseIdx].images.map((img, j) => (
+            <img key={j} src={img} alt="" onClick={() => setZoom(img)} />
+          ))}
+        </div>
+
+        {/* butoane nav */}
+        <div className="case-nav">
+          <button className="nav-btn" onClick={() => stepCase(-1)}>
+            ‹
+          </button>
+          {caseStudies.map((_, i) => (
+            <button
+              key={i}
+              className={`case-dot ${i === caseIdx ? "active" : ""}`}
+              onClick={() => setCaseIdx(i)}
+            >
+              Studiu {i + 1}
+            </button>
+          ))}
+          <button className="nav-btn" onClick={() => stepCase(1)}>
+            ›
+          </button>
+        </div>
+      </div>
 
       {/* CTA BUTTONS */}
       <div className="cta-buttons">
@@ -536,7 +588,7 @@ export default function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn&nbsp;PGG&nbsp;WEB
+          LinkedIn PGG WEB
         </a>
         <a
           className="cta-btn"
@@ -544,7 +596,7 @@ export default function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Facebook&nbsp;PGG&nbsp;WEB
+          Facebook PGG WEB
         </a>
         <a
           className="cta-btn"
@@ -552,7 +604,7 @@ export default function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Optimizare&nbsp;Site&nbsp;Pro
+          Optimizare Site Pro
         </a>
       </div>
 
@@ -563,7 +615,7 @@ export default function App() {
         </div>
       )}
 
-      {/* FOOTER & EMAIL */}
+      {/* FOOTER + EMAIL */}
       <footer className="footer">© Pleban Gelu Gabriel – PGG WEB S.R.L.</footer>
       <a
         href="mailto:office@pggweb.ro"
@@ -576,7 +628,7 @@ export default function App() {
   );
 }
 
-/* helper */
+/* helper card */
 const ChartCard = ({ title, children }) => (
   <div className="chart-card">
     <h3>{title}</h3>

@@ -5,10 +5,9 @@
   --accent-color: #ff5252;
   --text-color: #ffffff;
   --card-bg: #242428;
-  --transition-speed: 0.5s;
 }
 
-/* RESET */
+/* RESET & BODY --------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -25,13 +24,10 @@ body {
   scroll-behavior: smooth;
 }
 
-/* LOADING (2s) + “Bine ai venit!” */
+/* LOADING -------------------------------------------------------------- */
 .loading-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: var(--dark-bg);
   display: flex;
   flex-direction: column;
@@ -77,17 +73,17 @@ body {
   }
 }
 
-/* CERCURI ROȘII */
+/* CIRCLES -------------------------------------------------------------- */
 .floating-circle {
   position: absolute;
   border-radius: 50%;
   background: var(--accent-color);
   opacity: 0.5;
-  animation: floatInSpace 6s ease-in-out infinite alternate;
+  animation: float 6s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
 }
-@keyframes floatInSpace {
+@keyframes float {
   0% {
     transform: translate(0, 0);
   }
@@ -99,36 +95,32 @@ body {
   }
 }
 
-/* HEADER */
+/* HEADER --------------------------------------------------------------- */
 .header {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  background: #151517;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
+  background: #151517;
+  z-index: 10;
+  position: relative;
 }
 .header-left img {
   width: 60px;
-  margin-right: 1rem;
 }
 .header-center {
   flex: 1;
   text-align: center;
 }
 .header-center h1 {
-  color: var(--accent-color) !important;
-  font-size: 2rem !important;
+  color: var(--accent-color);
 }
 .header-right {
-  text-align: right;
-  font-size: 1.2rem;
   opacity: 0.8;
+  font-size: 1.1rem;
 }
 
-/* INFO-BOX (sus) - aceeași lățime ca charts-section */
+/* INFO BOX ------------------------------------------------------------- */
 .info-box {
   width: 95%;
   max-width: 1200px;
@@ -137,12 +129,11 @@ body {
   background: var(--card-bg);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.8s ease forwards;
 }
 .info-text h2 {
+  color: var(--accent-color);
   font-size: 1.7rem;
   margin-bottom: 1rem;
-  color: var(--accent-color);
 }
 .info-text p {
   font-size: 1.2rem;
@@ -150,69 +141,58 @@ body {
   opacity: 0.9;
 }
 
-/* CHARTS SECTION */
+/* CHARTS --------------------------------------------------------------- */
 .charts-section {
   width: 95%;
   max-width: 1200px;
   margin: 2rem auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  position: relative;
-  z-index: 10;
 }
 .chart-card {
   background: var(--card-bg);
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.8s ease forwards;
 }
 .chart-card h3 {
-  font-size: 1.4rem;
+  text-align: center;
   margin-bottom: 0.5rem;
   color: var(--accent-color);
-  text-align: center;
 }
 .chart-container {
-  width: 100%;
   height: 300px;
-  position: relative;
 }
 
-/* PORTOFOLIU */
+/* PORTOFOLIU ----------------------------------------------------------- */
 .portfolio-title {
   text-align: center;
-  margin: 2rem 0 1rem;
   font-size: 2rem;
   font-weight: 600;
-  z-index: 10;
+  margin: 2rem 0 1rem;
 }
 .portfolio-block {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 2rem;
   background: var(--card-bg);
-  margin: 1rem auto;
   padding: 1.5rem;
+  margin: 1rem auto;
   max-width: 1100px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.8s ease forwards;
-  z-index: 10;
 }
 .portfolio-text {
   flex: 1;
 }
 .portfolio-text h2 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
   color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
 }
 .portfolio-text ul {
-  font-size: 1.2rem;
   list-style: none;
+  font-size: 1.1rem;
   margin-left: 1rem;
 }
 .portfolio-text li {
@@ -233,140 +213,232 @@ body {
 .portfolio-image img {
   max-width: 200px;
   width: 100%;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  border-radius: 4px;
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 .portfolio-image img:hover {
   transform: scale(1.05);
 }
 
-/* REZULTATE (5 carduri) */
+/* RESULTS / SLIDER ----------------------------------------------------- */
 .results-section-title {
   text-align: center;
-  margin: 2rem 0 1rem;
   font-size: 2rem;
   font-weight: 600;
-  z-index: 10;
+  margin: 2rem 0 1rem;
 }
 .results-section {
   width: 95%;
   max-width: 1200px;
-  margin: 1rem auto 3rem auto;
+  margin: 1rem auto 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  position: relative;
-  z-index: 10;
 }
 .results-block {
   background: var(--card-bg);
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.8s ease forwards;
-  padding: 1.5rem;
 }
 .results-block h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
   color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
-.results-images {
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 2.4rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.4rem;
+}
+.nav-btn:hover {
+  transform: scale(1.2);
+}
+.big-img {
+  max-width: 100%;
+  max-height: 420px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.thumb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.thumb {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.thumb:hover {
+  opacity: 1;
+}
+.thumb.active {
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+/* STUDII DE CAZ -------------------------------------------------------- */
+.case-section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+.case-section {
+  width: 95%;
+  max-width: 1200px;
+  margin: 1rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.case-block {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.case-text h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+.case-text p {
+  line-height: 1.45;
+  white-space: pre-line;
+}
+.case-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.case-images img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+/* CTA BUTTONS ---------------------------------------------------------- */
+.cta-buttons {
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
 }
-.results-images img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border: 2px solid #333;
+.cta-btn {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   border-radius: 6px;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: background 0.3s;
 }
-.results-images img:hover {
-  transform: scale(1.04);
+.cta-btn:hover {
+  background: #ff8f8f;
 }
 
-/* FOOTER */
+/* MODAL --------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  z-index: 9999;
+}
+.modal-img {
+  max-width: 90%;
+  max-height: 85%;
+  border: 4px solid #fff;
+  border-radius: 6px;
+  cursor: auto;
+}
+
+/* FOOTER & EMAIL ------------------------------------------------------ */
 .footer {
   text-align: center;
   font-size: 0.8rem;
   padding: 1.5rem;
-  opacity: 0.7;
   background: #151517;
-  position: relative;
-  z-index: 10;
+  opacity: 0.7;
 }
-
-/* BUTON EMAIL */
 .email-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   color: #000;
-  width: 70px;
-  height: 70px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  transition: background 0.3s ease;
+  font-size: 1.8rem;
   text-decoration: none;
+  z-index: 9999;
+  transition: background 0.3s;
 }
 .email-button:hover {
   background: #ff8f8f;
 }
 
-/* ANIMARE fadeInUp */
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(15px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+/* RESPONSIVE ---------------------------------------------------------- */
+@media (max-width: 992px) {
+  .charts-section {
+    grid-template-columns: 1fr;
   }
 }
-
-/* MEDIA QUERIES pentru mobil */
 @media (max-width: 768px) {
-  .info-box {
-    /* tot 95% latime, doar text centrat pe mobil */
-    text-align: center;
+  .big-img {
+    max-height: 260px;
   }
-
-  .charts-section {
-    grid-template-columns: 1fr; /* 1 col pe mobil */
+  .thumb {
+    width: 70px;
+    height: 48px;
   }
-
-  /* Portofoliu => text + imagine la final => invertim ordinea pe mobil */
   .portfolio-block {
     flex-direction: column;
     align-items: center;
-  }
-  .portfolio-text {
-    margin-bottom: 1rem;
     text-align: center;
-    order: 1;
   }
   .portfolio-image {
     margin-top: 1rem;
-    text-align: center;
-    order: 2;
   }
-  .portfolio-image img {
-    max-width: 100%;
-  }
-
-  /* Rezultate - imaginile tot 100% latime pe mobil */
-  .results-images img {
-    max-width: 100%;
+  .case-block {
+    flex-direction: column;
+    align-items: center;
   }
 }

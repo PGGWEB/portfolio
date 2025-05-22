@@ -7,7 +7,7 @@
   --card-bg: #242428;
 }
 
-/* RESET & BODY --------------------------------------------------------- */
+/* RESET & BODY */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* LOADING -------------------------------------------------------------- */
+/* LOADING */
 .loading-overlay {
   position: fixed;
   inset: 0;
@@ -73,7 +73,7 @@ body {
   }
 }
 
-/* CIRCLES -------------------------------------------------------------- */
+/* CIRCLES */
 .floating-circle {
   position: absolute;
   border-radius: 50%;
@@ -95,7 +95,7 @@ body {
   }
 }
 
-/* HEADER --------------------------------------------------------------- */
+/* HEADER */
 .header {
   display: flex;
   align-items: center;
@@ -120,7 +120,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* INFO BOX ------------------------------------------------------------- */
+/* INFO BOX */
 .info-box {
   width: 95%;
   max-width: 1200px;
@@ -141,7 +141,7 @@ body {
   opacity: 0.9;
 }
 
-/* CHARTS --------------------------------------------------------------- */
+/* CHARTS */
 .charts-section {
   width: 95%;
   max-width: 1200px;
@@ -165,7 +165,7 @@ body {
   height: 300px;
 }
 
-/* PORTOFOLIU ----------------------------------------------------------- */
+/* PORTOFOLIU */
 .portfolio-title {
   text-align: center;
   font-size: 2rem;
@@ -221,7 +221,7 @@ body {
   transform: scale(1.05);
 }
 
-/* RESULTS / SLIDER ----------------------------------------------------- */
+/* RESULTS / SLIDER */
 .results-section-title {
   text-align: center;
   font-size: 2rem;
@@ -266,12 +266,13 @@ body {
 .nav-btn:hover {
   transform: scale(1.2);
 }
-.big-img {
+.big-media {
   max-width: 100%;
   max-height: 420px;
   border: 2px solid #333;
   border-radius: 6px;
   cursor: pointer;
+  object-fit: contain;
 }
 .thumb-row {
   display: flex;
@@ -296,26 +297,21 @@ body {
   opacity: 1;
 }
 
-/* STUDII DE CAZ -------------------------------------------------------- */
+/* STUDII DE CAZ (slider) */
 .case-section-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
   margin: 2rem 0 1rem;
 }
-.case-section {
-  width: 95%;
-  max-width: 1200px;
-  margin: 1rem auto 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
 .case-block {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  width: 95%;
+  max-width: 1200px;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -326,8 +322,8 @@ body {
   font-size: 1.5rem;
 }
 .case-text p {
-  line-height: 1.45;
   white-space: pre-line;
+  line-height: 1.45;
 }
 .case-images {
   display: flex;
@@ -342,8 +338,30 @@ body {
   border: 2px solid #333;
   cursor: pointer;
 }
+.case-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.case-dot {
+  background: none;
+  border: 2px solid var(--accent-color);
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.case-dot.active,
+.case-dot:hover {
+  background: var(--accent-color);
+}
 
-/* CTA BUTTONS ---------------------------------------------------------- */
+/* CTA BUTTONS */
 .cta-buttons {
   width: 95%;
   max-width: 1200px;
@@ -367,7 +385,7 @@ body {
   background: #ff8f8f;
 }
 
-/* MODAL --------------------------------------------------------------- */
+/* MODAL */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -386,7 +404,7 @@ body {
   cursor: auto;
 }
 
-/* FOOTER & EMAIL ------------------------------------------------------ */
+/* FOOTER & EMAIL */
 .footer {
   text-align: center;
   font-size: 0.8rem;
@@ -415,14 +433,14 @@ body {
   background: #ff8f8f;
 }
 
-/* RESPONSIVE ---------------------------------------------------------- */
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .charts-section {
     grid-template-columns: 1fr;
   }
 }
 @media (max-width: 768px) {
-  .big-img {
+  .big-media {
     max-height: 260px;
   }
   .thumb {
@@ -437,8 +455,7 @@ body {
   .portfolio-image {
     margin-top: 1rem;
   }
-  .case-block {
-    flex-direction: column;
-    align-items: center;
+  .case-images img {
+    max-width: 100%;
   }
 }

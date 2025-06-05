@@ -89,7 +89,10 @@ const barAdsCampaigns = {
 const chartOptions = {
   responsive: true,
   plugins: {
-    legend: { position: "top", labels: { color: "#fff", font: { size: 14 } } },
+    legend: {
+      position: "top",
+      labels: { color: "#fff", font: { size: 14 } },
+    },
   },
   scales: {
     x: { ticks: { color: "#fff" }, grid: { color: "#555" } },
@@ -150,6 +153,27 @@ const portfolioData = [
       "legalup.ro (plan strategic SEO - subcontractori)",
       "rotresort.ro (SEO activă - subcontractori)",
       "happybeauty.ro (SEO inițială - subcontractori)",
+      /* ─── Proiecte noi 2025 ─── */
+      "Aiagroup.es (SEO On-page + Tehnic)",
+      "GrainBags (SEO Tehnic + On-page)",
+      "Autorekrut.com (SEO Tehnic + On-page)",
+      "Blinkersbrew.com (SEO Tehnic + On-page)",
+      "Degamark.ro (SEO Tehnic + On-page)",
+      "Deppo.ro (SEO Tehnic + On-page)",
+      "Dranabucur.ro (SEO Tehnic + On-page)",
+      "Efe-univers.com (SEO Tehnic + On-page)",
+      "Eian.ro (SEO Tehnic + On-page)",
+      "Fiscalmag.com (SEO Tehnic + On-page)",
+      "Gateclaim.com (SEO On-page + Tehnic)",
+      "Laraelsaad.com (SEO On-page + Tehnic)",
+      "Levtech.ro (SEO Tehnic + On-page)",
+      "Myomobile.ro (SEO Tehnic + On-page)",
+      "Newlifebio.eu (SEO On-page + Tehnic)",
+      "Paleti.eu (SEO On-page + Tehnic)",
+      "Raftdesign.ro (SEO On-page + Tehnic)",
+      "Softpas.com (SEO On-page + Tehnic)",
+      "Suntturist.ro (SEO On-page + Tehnic)",
+      "Sustainability.today (SEO On-page + Tehnic)",
     ],
   },
   {
@@ -159,6 +183,8 @@ const portfolioData = [
       "alesano.ro (SEO, articole, newsletter - subcontractori)",
       "profesori-meditatii.ro (site + SEO + reclame social media)",
       "eucom.ro (social media marketing, SEO punctual)",
+      /* ─── Adăugări 2025 ─── */
+      "Contavibe.ro (SEO Tehnic + On-page, Social Media)",
     ],
   },
   {
@@ -178,6 +204,16 @@ const portfolioData = [
       "mediadesignro.ro (SEO tehnic, GSC - subcontractori)",
       "tripdeals.ro (SEO tehnic, GSC)",
       "tripdeals.it (SEO tehnic, GSC)",
+    ],
+  },
+  {
+    category: "Social Media (administrare conturi)",
+    items: [
+      "Avg education (Social Media)",
+      "Behost academy (Social Media)",
+      "Dr. Laura-Simona Negoiță (Social Media)",
+      "Mystea.ro (Social Media)",
+      "Pet sitter Prahova (Social Media)",
     ],
   },
 ];

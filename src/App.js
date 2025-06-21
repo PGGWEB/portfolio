@@ -241,6 +241,7 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-11-at-18.33.02_68325f47.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-11-at-18.42.41_db77b6a0.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/05/Top-formate-de-continut1.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/3456354634564445.png",
     ],
   },
   {
@@ -289,6 +290,12 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitled6785675.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitled354635463456356.png",
       "https://pggweb.ro/wp-content/uploads/2025/01/Untitled47654746575467547.png",
+      "https://pggweb.ro/wp-content/uploads/2025/06/505376773_122185230332291855_7735372248301924693_n.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/502550921_122185230278291855_3063786388651010768_n.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/506445232_122185230308291855_2881691436189602280_n.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/505351257_122185230416291855_6239512969567814083_n.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/504622816_122185236812291855_717708504973506902_n.jpg",
+      "https://pggweb.ro/wp-content/uploads/2025/06/24353244645643564353546555.png",
     ],
   },
   {
@@ -320,7 +327,6 @@ const resultsData = [
       "https://pggweb.ro/wp-content/uploads/2025/05/04.04-1.png",
       "https://pggweb.ro/wp-content/uploads/2025/05/04.04.png",
       "https://pggweb.ro/wp-content/uploads/2025/05/492353102_122195626304100392_2147387960046428571_n.jpg",
-      /* ─── clipuri video noi ─── */
       "https://pggweb.ro/wp-content/uploads/2025/05/1.-Final-CUT-Promo-SEO-PGG.mp4",
       "https://pggweb.ro/wp-content/uploads/2025/05/2.-Final-Promo-After-Feedback.mp4",
       "https://pggweb.ro/wp-content/uploads/2025/05/3.-Postare-Educativa-SEO-.mp4",
@@ -359,7 +365,7 @@ Concluzie: conținutul ales strategic și optimizat pentru Search + Discover poa
     title: "Studiu de caz 2",
     text: `Cum am generat 37 de clienți potențiali pentru un cabinet psihologic cu mai puțin de 400 lei
 
-Nișă: servicii psihologice
+Nișă: servicii psihologice  
 Obiectiv: lead-uri calificate pentru programări
 
 Ce am făcut:
@@ -379,6 +385,27 @@ Factor-cheie: claritatea mesajului, emoția transmisă și imaginea autentică.`
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/05/493537607_2111993129318364_653812159933224643_n.jpg",
       "https://pggweb.ro/wp-content/uploads/2025/05/493312780_2111993142651696_4233962956655297252_n.jpg",
+    ],
+  },
+  {
+    title: "Studiu de caz 3",
+    text: `🚀 AV-PGG – asistentul tău digital TOT-ÎN-UNU!
+Deschizi Telegram și, dintr-o singură fereastră de chat, poți:
+1️⃣ Programa întâlniri – o frază și apare imediat în Google Calendar, cu link de Meet și invitați.
+2️⃣ Verifica agenda – întrebi „ce am pe 25 iunie?” și primești răspuns instant.
+3️⃣ Trimite e-mailuri personalizate – dictezi conținutul, el completează și trimite.
+4️⃣ Citi inbox-ul – găsește mailurile importante fără să mai cauți tu.
+5️⃣ Posta simultan pe Facebook & LinkedIn – un singur mesaj → două rețele live.
+6️⃣ Găsi lead-uri – scanează Google Maps & grupuri Facebook și îți livrează potențiali clienți gata filtrați.
+7️⃣ Organiza task-uri – creează sau afișează bilete Jira direct din chat.
+8️⃣ Distribui articole de blog – preia text + imagine și publică automat.
+9️⃣ Ţine jurnalul activităţii – totul se salvează în Google Docs/Sheets.
+🔟 Discuţie liberă 24/7 – pune orice întrebare și primești răspuns dintr-o bază imensă de cunoștințe, plus ebook-uri gratuite despre business & antreprenoriat pe care le poți descărca direct din chat.
+Totul într-un singur loc, fără tab-uri multiple, fără copy-paste!`,
+    images: [
+      "https://pggweb.ro/wp-content/uploads/2025/06/24353244645643564353546555.png",
+      "https://pggweb.ro/wp-content/uploads/2025/06/506445232_122185230308291855_2881691436189602280_n.jpg",
+      /* linkul intern nepublic a fost eliminat */
     ],
   },
 ];

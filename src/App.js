@@ -30,6 +30,18 @@ ChartJS.register(
 const LOGO =
   "https://pggweb.ro/wp-content/uploads/2024/09/cropped-cropped-logo-perfect-1.webp";
 
+/* ───────── Helper: ultimele 6 luni ───────── */
+const lastMonths = (n = 6) => {
+  const arr = [];
+  const now = new Date();
+  for (let i = n - 1; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    arr.push(d.toLocaleString("ro-RO", { month: "short" }).replace(".", ""));
+  }
+  return arr;
+};
+const labels6 = lastMonths(6);
+
 /* ───────── Charts data ───────── */
 const barSocialMedia = {
   labels: ["Facebook", "Instagram", "LinkedIn", "TikTok", "YouTube"],
@@ -37,51 +49,51 @@ const barSocialMedia = {
     {
       label: "Număr conturi administrate",
       data: [25, 15, 5, 8, 3],
-      backgroundColor: "#ff5252",
+      backgroundColor: "#ff4949",
     },
   ],
 };
 
 const lineSeoTraffic = {
-  labels: ["Iul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: labels6,
   datasets: [
     {
       label: "Trafic organic (k vizite)",
       data: [12, 14, 16, 18, 23, 28],
-      borderColor: "#ff5252",
-      backgroundColor: "#ff525280",
-      tension: 0.2,
+      borderColor: "#ff4949",
+      backgroundColor: "#ff494928",
+      tension: 0.25,
     },
   ],
 };
 
 const lineClients = {
-  labels: ["Iul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: labels6,
   datasets: [
     {
       label: "Clienți România",
       data: [40, 42, 45, 48, 50, 55],
-      borderColor: "#ff5252",
-      backgroundColor: "#ff525280",
-      tension: 0.2,
+      borderColor: "#ff4949",
+      backgroundColor: "#ff494928",
+      tension: 0.25,
     },
     {
       label: "Clienți Internațional",
       data: [15, 17, 18, 19, 22, 25],
-      borderColor: "#ff9999",
-      backgroundColor: "#ff999980",
-      tension: 0.2,
+      borderColor: "#ff8f8f",
+      backgroundColor: "#ff8f8f28",
+      tension: 0.25,
     },
   ],
 };
 
 const barAdsCampaigns = {
-  labels: ["Iul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: labels6,
   datasets: [
     {
       label: "Campanii Ads Administrate",
       data: [20, 24, 28, 36, 40, 50],
-      backgroundColor: "#ff5252",
+      backgroundColor: "#ff4949",
     },
   ],
 };
@@ -91,12 +103,12 @@ const chartOptions = {
   plugins: {
     legend: {
       position: "top",
-      labels: { color: "#fff", font: { size: 14 } },
+      labels: { color: "#e6e6e9", font: { size: 14 } },
     },
   },
   scales: {
-    x: { ticks: { color: "#fff" }, grid: { color: "#555" } },
-    y: { ticks: { color: "#fff" }, grid: { color: "#555" } },
+    x: { ticks: { color: "#e6e6e9" }, grid: { color: "#555" } },
+    y: { ticks: { color: "#e6e6e9" }, grid: { color: "#555" } },
   },
 };
 
@@ -119,7 +131,7 @@ const infoData = [
   },
 ];
 
-/* ───────── Portofoliu & imagini ───────── */
+/* ───────── Portofoliu (COMPLET) ───────── */
 const portfolioData = [
   {
     category: "Site-uri proprii optimizate SEO",
@@ -153,7 +165,6 @@ const portfolioData = [
       "legalup.ro (plan strategic SEO - subcontractori)",
       "rotresort.ro (SEO activă - subcontractori)",
       "happybeauty.ro (SEO inițială - subcontractori)",
-      /* ─── Proiecte noi 2025 ─── */
       "Aiagroup.es (SEO On-page + Tehnic)",
       "GrainBags (SEO Tehnic + On-page)",
       "Autorekrut.com (SEO Tehnic + On-page)",
@@ -183,7 +194,6 @@ const portfolioData = [
       "alesano.ro (SEO, articole, newsletter - subcontractori)",
       "profesori-meditatii.ro (site + SEO + reclame social media)",
       "eucom.ro (social media marketing, SEO punctual)",
-      /* ─── Adăugări 2025 ─── */
       "Contavibe.ro (SEO Tehnic + On-page, Social Media)",
     ],
   },
@@ -226,7 +236,7 @@ const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_07.png",
 ];
 
-/* ───────── Rezultate (imagini + clipuri) ───────── */
+/* ───────── Rezultate (COMPLET) ───────── */
 const resultsData = [
   {
     title: "Rezultate Social Media",
@@ -334,7 +344,7 @@ const resultsData = [
   },
 ];
 
-/* ───────── Studii de caz ───────── */
+/* ───────── Studii de caz (COMPLET) ───────── */
 const caseStudies = [
   {
     title: "Studiu de caz 1",
@@ -405,12 +415,11 @@ Totul într-un singur loc, fără tab-uri multiple, fără copy-paste!`,
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/06/24353244645643564353546555.png",
       "https://pggweb.ro/wp-content/uploads/2025/06/506445232_122185230308291855_2881691436189602280_n.jpg",
-      /* linkul intern nepublic a fost eliminat */
     ],
   },
 ];
 
-/* ───────── Cercuri roșii ───────── */
+/* ───────── Cercuri ───────── */
 const circles = Array(80)
   .fill(null)
   .map((_, id) => ({
@@ -444,7 +453,7 @@ export default function App() {
     return () => clearInterval(i);
   }, []);
 
-  /* slider helpers (rezultate) */
+  /* slider helpers */
   const stepSlide = (sec, d) =>
     setSlideIdx((prev) => {
       const arr = [...prev];
@@ -452,7 +461,6 @@ export default function App() {
       arr[sec] = (arr[sec] + d + len) % len;
       return arr;
     });
-
   const pickSlide = (sec, idx) =>
     setSlideIdx((prev) => {
       const arr = [...prev];
@@ -494,10 +502,7 @@ export default function App() {
         <div className="header-left">
           <img src={LOGO} alt="PGG WEB Logo" />
         </div>
-        <div className="header-center">
-          <h1>PGG WEB S.R.L.</h1>
-        </div>
-        <div className="header-right">Deeds Not Words</div>
+        <div className="brand-text">PGG WEB – Deeds Not Words</div>
       </header>
 
       {/* INFO BOX */}
@@ -525,7 +530,7 @@ export default function App() {
       </section>
 
       {/* PORTOFOLIU */}
-      <h2 className="portfolio-title">Proiectele noastre</h2>
+      <h2 className="section-title">Proiectele noastre</h2>
       {portfolioData.map((cat, idx) => (
         <div className="portfolio-block" key={idx}>
           <div className="portfolio-text">
@@ -549,7 +554,7 @@ export default function App() {
       ))}
 
       {/* REZULTATE */}
-      <h2 className="results-section-title">Rezultate</h2>
+      <h2 className="section-title">Rezultate</h2>
       <section className="results-section">
         {resultsData.map((sec, s) => (
           <div className="results-block" key={s}>
@@ -577,12 +582,11 @@ export default function App() {
               </button>
             </div>
             <div className="thumb-row">
-              {sec.images.map((media, i) => {
-                const isVid = media.endsWith(".mp4");
-                return isVid ? (
+              {sec.images.map((m, i) =>
+                m.endsWith(".mp4") ? (
                   <video
                     key={i}
-                    src={media}
+                    src={m}
                     muted
                     className={`thumb ${i === slideIdx[s] ? "active" : ""}`}
                     onClick={() => pickSlide(s, i)}
@@ -590,20 +594,20 @@ export default function App() {
                 ) : (
                   <img
                     key={i}
-                    src={media}
+                    src={m}
                     alt=""
                     className={`thumb ${i === slideIdx[s] ? "active" : ""}`}
                     onClick={() => pickSlide(s, i)}
                   />
-                );
-              })}
+                )
+              )}
             </div>
           </div>
         ))}
       </section>
 
-      {/* STUDII DE CAZ – slider cu butoane */}
-      <h2 className="case-section-title">Studii de caz</h2>
+      {/* STUDII DE CAZ */}
+      <h2 className="section-title">Studii de caz</h2>
       <div className="case-block">
         <div className="case-text">
           <h3>{caseStudies[caseIdx].title}</h3>
@@ -614,8 +618,6 @@ export default function App() {
             <img key={j} src={img} alt="" onClick={() => setZoom(img)} />
           ))}
         </div>
-
-        {/* butoane nav */}
         <div className="case-nav">
           <button className="nav-btn" onClick={() => stepCase(-1)}>
             ‹
@@ -635,7 +637,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* CTA BUTTONS */}
+      {/* CTA */}
       <div className="cta-buttons">
         <a
           className="cta-btn"
@@ -678,7 +680,7 @@ export default function App() {
         </div>
       )}
 
-      {/* FOOTER + EMAIL */}
+      {/* FOOTER */}
       <footer className="footer">© Pleban Gelu Gabriel – PGG WEB S.R.L.</footer>
       <a
         href="mailto:office@pggweb.ro"

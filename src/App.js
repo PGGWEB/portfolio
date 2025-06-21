@@ -32,15 +32,15 @@ const LOGO =
 
 /* ───────── Helper: ultimele 6 luni ───────── */
 const lastMonths = (n = 6) => {
-  const arr = [];
+  const list = [];
   const now = new Date();
   for (let i = n - 1; i >= 0; i--) {
     const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    arr.push(d.toLocaleString("ro-RO", { month: "short" }).replace(".", ""));
+    list.push(d.toLocaleString("ro-RO", { month: "short" }).replace(".", ""));
   }
-  return arr;
+  return list;
 };
-const labels6 = lastMonths(6);
+const labels6 = lastMonths();
 
 /* ───────── Charts data ───────── */
 const barSocialMedia = {
@@ -131,7 +131,7 @@ const infoData = [
   },
 ];
 
-/* ───────── Portofoliu (COMPLET) ───────── */
+/* ───────── Portofoliu & imagini ───────── */
 const portfolioData = [
   {
     category: "Site-uri proprii optimizate SEO",
@@ -236,7 +236,7 @@ const portfolioImages = [
   "https://pggweb.ro/wp-content/uploads/2019/07/img_box_07.png",
 ];
 
-/* ───────── Rezultate (COMPLET) ───────── */
+/* ───────── Rezultate ───────── */
 const resultsData = [
   {
     title: "Rezultate Social Media",
@@ -344,7 +344,7 @@ const resultsData = [
   },
 ];
 
-/* ───────── Studii de caz (COMPLET) ───────── */
+/* ───────── Studii de caz ───────── */
 const caseStudies = [
   {
     title: "Studiu de caz 1",
@@ -375,8 +375,8 @@ Concluzie: conținutul ales strategic și optimizat pentru Search + Discover poa
     title: "Studiu de caz 2",
     text: `Cum am generat 37 de clienți potențiali pentru un cabinet psihologic cu mai puțin de 400 lei
 
-Nișă: servicii psihologice  
-Obiectiv: lead-uri calificate pentru programări
+• Nișă: servicii psihologice  
+• Obiectiv: lead-uri calificate pentru programări
 
 Ce am făcut:
 - Campanie Leads, strategie „cel mai mare volum”
@@ -399,18 +399,20 @@ Factor-cheie: claritatea mesajului, emoția transmisă și imaginea autentică.`
   },
   {
     title: "Studiu de caz 3",
-    text: `🚀 AV-PGG – asistentul tău digital TOT-ÎN-UNU!
+    text: `🚀 AV-PGG – asistentul tău digital TOT-ÎN-UNU!  
 Deschizi Telegram și, dintr-o singură fereastră de chat, poți:
-1️⃣ Programa întâlniri – o frază și apare imediat în Google Calendar, cu link de Meet și invitați.
-2️⃣ Verifica agenda – întrebi „ce am pe 25 iunie?” și primești răspuns instant.
-3️⃣ Trimite e-mailuri personalizate – dictezi conținutul, el completează și trimite.
-4️⃣ Citi inbox-ul – găsește mailurile importante fără să mai cauți tu.
-5️⃣ Posta simultan pe Facebook & LinkedIn – un singur mesaj → două rețele live.
-6️⃣ Găsi lead-uri – scanează Google Maps & grupuri Facebook și îți livrează potențiali clienți gata filtrați.
-7️⃣ Organiza task-uri – creează sau afișează bilete Jira direct din chat.
-8️⃣ Distribui articole de blog – preia text + imagine și publică automat.
-9️⃣ Ţine jurnalul activităţii – totul se salvează în Google Docs/Sheets.
-🔟 Discuţie liberă 24/7 – pune orice întrebare și primești răspuns dintr-o bază imensă de cunoștințe, plus ebook-uri gratuite despre business & antreprenoriat pe care le poți descărca direct din chat.
+
+1️⃣ Programa întâlniri – o frază și apare imediat în Google Calendar  
+2️⃣ Verifica agenda – întrebi „ce am pe 25 iunie?” și primești răspuns  
+3️⃣ Trimite e-mailuri personalizate – dictezi, el trimite  
+4️⃣ Citi inbox-ul – găsește mailurile importante  
+5️⃣ Posta simultan pe Facebook & LinkedIn  
+6️⃣ Găsi lead-uri – Google Maps & grupuri FB filtrate  
+7️⃣ Organiza task-uri – bilete Jira direct din chat  
+8️⃣ Distribui articole de blog automat  
+9️⃣ Ţine jurnalul activităţii în Docs/Sheets  
+🔟 Dialog 24/7 + ebook-uri gratuite
+
 Totul într-un singur loc, fără tab-uri multiple, fără copy-paste!`,
     images: [
       "https://pggweb.ro/wp-content/uploads/2025/06/24353244645643564353546555.png",
@@ -419,15 +421,16 @@ Totul într-un singur loc, fără tab-uri multiple, fără copy-paste!`,
   },
 ];
 
-/* ───────── Cercuri ───────── */
-const circles = Array(80)
+/* ───────── Cercuri roșii ───────── */
+const circles = Array(60) // **jumătate din numărul anterior**
   .fill(null)
   .map((_, id) => ({
     id,
-    top: Math.floor(Math.random() * 96),
-    left: Math.floor(Math.random() * 96),
-    size: Math.floor(Math.random() * 21) + 10,
-    delay: (Math.random() * 2).toFixed(1),
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    size: Math.floor(Math.random() * 18) + 8,
+    delay: (Math.random() * 4).toFixed(1),
+    dur: (Math.random() * 8 + 8).toFixed(1), // 8-16 s
   }));
 
 /* ───────── APP ───────── */
@@ -482,7 +485,7 @@ export default function App() {
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
-      {/* cercuri */}
+      {/* buline animate */}
       {circles.map((c) => (
         <div
           key={c.id}
@@ -493,6 +496,7 @@ export default function App() {
             width: c.size,
             height: c.size,
             animationDelay: `${c.delay}s`,
+            "--dur": `${c.dur}s`,
           }}
         />
       ))}
@@ -637,7 +641,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* CTA BUTTONS */}
       <div className="cta-buttons">
         <a
           className="cta-btn"
